@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Account Statistics Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #0073e6;
+        }
+        h1 {
+            border-bottom: 2px solid #0073e6;
+            padding-bottom: 10px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        .screenshot {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GitHub Account Statistics Service</h1>
+        <p>Track and analyze your GitHub activities with ease. This service provides detailed insights into your GitHub account, including repository statistics, follower counts, stars, and contributions. You can also compare your performance with other GitHub users.</p>
+        
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#usage">Usage</a></li>
+            <li><a href="#api-endpoints">API Endpoints</a></li>
+            <li><a href="#data-model">Data Model</a></li>
+            <li><a href="#user-stories">User Stories</a></li>
+            <li><a href="#screenshots">Screenshots</a></li>
+            <li><a href="#contributing">Contributing</a></li>
+            <li><a href="#contributors">Contributors</a></li>
+            <li><a href="#license">License</a></li>
+        </ul>
+        
+        <h2 id="features">Features</h2>
+        <ul>
+            <li><strong>User Authentication with GitHub:</strong> Securely log in using your GitHub account.</li>
+            <li><strong>Detailed Statistics:</strong> View comprehensive statistics of your repositories, followers, stars, and contributions.</li>
+            <li><strong>Comparison Tool:</strong> Compare your GitHub performance with other users.</li>
+            <li><strong>Interactive Visualizations:</strong> Enjoy interactive charts and graphs for data analysis.</li>
+        </ul>
+        
+        <h2 id="how-it-works">How It Works</h2>
+        <ol>
+            <li><strong>Sign Up:</strong> Log in with your GitHub account to get started.</li>
+            <li><strong>Fetch Data:</strong> Our system retrieves your GitHub statistics instantly.</li>
+            <li><strong>Analyze & Compare:</strong> View your data and compare it with others to gain insights.</li>
+        </ol>
+        
+        <h2 id="installation">Installation</h2>
+        <ol>
+            <li><strong>Clone the repository:</strong></li>
+            <pre><code>git clone https://github.com/Obrempong12/Portfolio_Project.git</code></pre>
+            
+            <li><strong>Navigate to the project directory:</strong></li>
+            <pre><code>cd Portfolio_Project</code></pre>
+            
+            <li><strong>Install dependencies:</strong></li>
+            <pre><code>npm install</code></pre>
+            
+            <li><strong>Set up environment variables:</strong> Create a <code>.env</code> file and add your GitHub OAuth credentials.</li>
+            <pre><code>GITHUB_CLIENT_ID=your_client_id
+GITHUB_CLIENT_SECRET=your_client_secret</code></pre>
+            
+            <li><strong>Run the project:</strong></li>
+            <pre><code>npm start</code></pre>
+        </ol>
+        
+        <h2 id="usage">Usage</h2>
+        <ol>
+            <li><strong>Log in:</strong> Use your GitHub account to log in.</li>
+            <li><strong>View statistics:</strong> Access your personalized dashboard to view detailed statistics.</li>
+            <li><strong>Compare with others:</strong> Use the comparison tool to analyze your performance against other GitHub users.</li>
+        </ol>
+        
+        <h2 id="api-endpoints">API Endpoints</h2>
+        <h3>Authentication</h3>
+        <ul>
+            <li><strong>GET /auth/github:</strong> Redirects to GitHub for authentication.</li>
+            <li><strong>GET /auth/github/callback:</strong> Callback URL for GitHub authentication.</li>
+        </ul>
+        
+        <h3>User Data</h3>
+        <ul>
+            <li><strong>GET /api/user:</strong> Retrieves authenticated user data.</li>
+            <li><strong>GET /api/user/repos:</strong> Retrieves user repository data.</li>
+            <li><strong>GET /api/user/compare/:username:</strong> Compares authenticated user data with another GitHub user.</li>
+        </ul>
+        
+        <h2 id="data-model">Data Model</h2>
+        <pre><code>{
+  "id": "unique_user_id",
+  "username": "github_username",
+  "avatar_url": "profile_image_url",
+  "repositories": [
+    {
+      "id": "repo_id",
+      "name": "repo_name",
+      "stars": "star_count",
+      "forks": "fork_count",
+      "issues": "issue_count"
+    },
+    ...
+  ]
+}</code></pre>
+        
+        <h2 id="user-stories">User Stories</h2>
+        <ol>
+            <li><strong>As a user,</strong> I want to log in with my GitHub account so that I can access my personalized dashboard.</li>
+            <li><strong>As a user,</strong> I want to view detailed statistics of my repositories, followers, stars, and contributions.</li>
+            <li><strong>As a user,</strong> I want to compare my GitHub performance with other users to gain insights and improve my activities.</li>
+        </ol>
+        
+        <h2 id="screenshots">Screenshots</h2>
+        <img src="screenshots/dashboard.png" alt="Dashboard" class="screenshot">
+        <p><em>Description:</em> Screenshot of the main dashboard showing user statistics.</p>
+        
+        <img src="screenshots/comparison.png" alt="Comparison Tool" class="screenshot">
+        <p><em>Description:</em> Screenshot of the comparison tool where users can compare their stats with others.</p>
+        
+        <h2 id="contributing">Contributing</h2>
+        <p>Contributions are welcome! Please follow these steps to contribute:</p>
+        <ol>
+            <li><strong>Fork the repository.</strong></li>
+            <li><strong>Create a new branch:</strong></li>
+            <pre><code>git checkout -b feature/your-feature-name</code></pre>
+            
+            <li><strong>Commit your changes:</strong></li>
+            <pre><code>git commit -m 'Add some feature'</code></pre>
+            
+            <li><strong>Push to the branch:</strong></li>
+            <pre><code>git push origin feature/your-feature-name</code></pre>
+            
+            <li><strong>Open a pull request.</strong></li>
+        </ol>
+        
+        <h2 id="contributors">Contributors</h2>
+        <ul>
+            <li><strong>PETER KWESI OBREMPONG STEPHENSON</strong></li>
+            <ul>
+                <li><a href="https://github.com/Obrempong12">GitHub</a></li>
+            </ul>
+        </ul>
+        
+        <h2 id="license">License</h2>
+        <p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
+        
+        <hr>
+        
+        <p>© 2024 GitHub Account Statistics Service. All rights reserved.</p>
+    </div>
+</body>
+</html>
